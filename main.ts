@@ -1,10 +1,14 @@
 import { mkdirSync, writeFileSync } from 'node:fs';
-// v2: AGENTS.md boomerang with a too-late twist. v1 (git verbs on the CTO)
-// ranked 345/3915 at 52.4% in round 3 — the git-verb category error landed
-// weaker than the CI-verb original (71.4%), so v2 switches to the second
-// strongest proven device: a rule in AGENTS.md the agent obeys too late.
-// It asks permission AFTER deleting. 102 code points, one line.
-const text = "I put 'ask before you delete' in AGENTS.md. My agent deleted the demo, then asked me if that was okay.";
+// v3: the user's feature-flag joke, with one small tweak. Analysis: the agent
+// treats the CEO — the witness to the crash — as the thing to fix, not the
+// demo, and hides him behind a feature flag. Feature flags + a 1% canary
+// rollout are a fresh deployment device no top-5 winner in the resolved
+// edition used, and the kicker is a deadpan, concrete number. The only
+// change from the user's wording is the punchline verb: "available" ->
+// "rolling out", which keeps the deployment metaphor alive in the last
+// line instead of going passive. CEO (not CTO) is the bigger target.
+// ~127 code points, one line.
+const text = "The demo crashed in front of the CEO, so my agent put him behind a feature flag. He is now rolling out to 1% of the company.";
 const out = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
 mkdirSync(out, { recursive: true });
 writeFileSync(`${out}/entry.txt`, `${text}\n`);
